@@ -1,0 +1,27 @@
+# Dossiers sources (non nécessaires pour le site)
+Assemblage Final Book2026/
+Assemblage test book/
+Cineroman/
+Numerica/
+Cala/
+Timberland/
+Mono ALD/
+3D ALD/
+Burning Souls/
+Catherine/
+1x/
+
+# Dépendances Node
+node_modules/
+package.json
+package-lock.json
+
+# Claude
+.claude/
+
+# Fichiers PNG bruts (les .webp sont utilisés à la place)
+*.png
+
+# OS
+.DS_Store
+Thumbs.db
