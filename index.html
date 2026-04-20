@@ -292,6 +292,41 @@
     }
 
     /* ============================================================
+       DIRECTION BADGE (top-left)
+    ============================================================ */
+    #direction-badge {
+      position: fixed;
+      top: 2rem;
+      left: 2.5rem;
+      z-index: 100;
+      font-family: var(--font-sans);
+      font-size: 0.58rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      transition: opacity 1s var(--ease-silk) 2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    #direction-badge.visible { opacity: 0.5; }
+    #direction-badge .db-name {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      opacity: 0.9;
+    }
+    #direction-badge .db-role {
+      font-size: 0.55rem;
+      letter-spacing: 0.35em;
+      opacity: 0.65;
+    }
+    @media (max-width: 768px) {
+      #direction-badge { display: none; }
+    }
+
+    /* ============================================================
        AVAILABILITY BADGE
     ============================================================ */
     #availability {
@@ -1734,6 +1769,12 @@
   <!-- Pyramid trigger strip (right edge hover zone) -->
   <div id="pyr-trigger" aria-hidden="true"></div>
 
+  <!-- Direction badge (fixed top-left) -->
+  <div id="direction-badge">
+    <span class="db-name">Nohann Bokan</span>
+    <span class="db-role">Direction artistique &nbsp;·&nbsp; Alternance</span>
+  </div>
+
   <!-- Availability badge (fixed, appears after load) -->
   <p id="availability">
     Recherche alternance&nbsp;·&nbsp;2 ans&nbsp;·&nbsp;2026&nbsp;–&nbsp;2028
@@ -1776,7 +1817,7 @@
     function revealHero() {
       document.body.style.overflow = '';
       site.classList.add('visible');
-      [{ id: 'availability', delay: 400 }, { id: 'pyramid-nav', delay: 1000 }, { id: 'pyr-trigger', delay: 1000 }]
+      [{ id: 'availability', delay: 400 }, { id: 'direction-badge', delay: 400 }, { id: 'pyramid-nav', delay: 1000 }, { id: 'pyr-trigger', delay: 1000 }]
         .forEach(({ id, delay }) => setTimeout(() => {
           const el = document.getElementById(id);
           if (el) el.classList.add('visible');
